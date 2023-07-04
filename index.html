@@ -37,17 +37,27 @@
                     alt=""
                     aria-hidden="true"
                     class="arrow_left"
+                    style="width: 0.4rem"
                   />
                 </button>
                 <div class="avatar_picture">
-                  <img src="./images/avatar.jpg" alt="avatar picture" />
+                  <img
+                    src="./images/avatar.jpg"
+                    alt="avatar picture"
+                    style="width: 2.05rem; height: 2.05rem"
+                  />
                 </div>
                 <article class="avatar_info">
                   <span>Samuel Green</span>
                   <p>Available to Walk</p>
                 </article>
                 <button class="phone_options" aria-label="options button">
-                  <img src="./images/icon-dots.png" alt="" aria-hidden="true" />
+                  <img
+                    src="./images/icon-dots.png"
+                    alt=""
+                    aria-hidden="true"
+                    style="width: 0.25rem"
+                  />
                 </button>
               </div>
             </header>
@@ -64,16 +74,19 @@
                   src="./images/dog-image-1.jpg"
                   alt="dog picture"
                   class="item"
+                  style="width: 4.1rem; height: 4.1rem"
                 />
                 <img
                   src="./images/dog-image-2.jpg"
                   alt="dog picture"
                   class="item"
+                  style="width: 4.1rem; height: 4.1rem"
                 />
                 <img
                   src="./images/dog-image-3.jpg"
                   alt="dog picture"
                   class="item"
+                  style="width: 4.1rem; height: 4.1rem"
                 />
               </div>
               <span class="phone_chat item">
@@ -105,6 +118,7 @@
                     src="./images/icon-arrow-right.png"
                     alt=""
                     aria-hidden="true"
+                    style="width: 0.6rem"
                   />
                 </button>
               </div>
@@ -130,37 +144,6 @@
       <div class="pattern-right"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script>
-      const tl = gsap.timeline();
-
-      tl.to(".loader", {
-        height: 0,
-        top: "100%",
-        duration: 1.1,
-        delay: 0.8,
-        ease: Power2.easeInOut,
-      });
-
-      tl.from(".phone", {
-        y: -200,
-        opacity: 0,
-      });
-
-      tl.from(".phone_header", {
-        y: -50,
-        opacity: 0,
-      });
-
-      tl.from(".hide", {
-        y: -200,
-        stagger: 0.2,
-      });
-
-      tl.from(".item", {
-        scale: 0,
-        opacity: 0,
-        stagger: 0.1,
-      });
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
