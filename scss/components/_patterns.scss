@@ -1,0 +1,50 @@
+@use "../variables/variables" as v;
+
+.pattern-left,
+.pattern-right {
+  position: absolute;
+  width: 100%;
+  max-width: 42rem;
+  height: 70rem;
+  border-radius: 0 0 260px 260px;
+  background: linear-gradient(to top, v.$light-violet, v.$light-magenta);
+}
+
+.pattern-left {
+  top: 0;
+  left: 22rem;
+}
+
+.pattern-right {
+  transform: rotate(180deg);
+  right: 22rem;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.02;
+}
+
+@media (width < 1750px) {
+  .pattern-left {
+    left: -17rem;
+  }
+
+  .pattern-right {
+    right: -22rem;
+  }
+}
+
+@media (width < 1000px) {
+  .pattern-left,
+  .pattern-right {
+    max-width: 32rem;
+    height: 55vh;
+  }
+
+  .pattern-left {
+    left: -22rem;
+  }
+
+  .pattern-right {
+    right: -22rem;
+  }
+}

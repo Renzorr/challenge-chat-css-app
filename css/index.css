@@ -1,0 +1,347 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: hsl(270, 20%, 96%);
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  max-width: 81.7rem;
+  display: flex;
+  align-items: center;
+  gap: 12.2rem;
+}
+
+@media (width < 1000px) {
+  main {
+    flex-direction: column;
+  }
+}
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: hsl(264, 100%, 61%);
+  z-index: 999;
+}
+
+.pattern-left,
+.pattern-right {
+  position: absolute;
+  width: 100%;
+  max-width: 42rem;
+  height: 70rem;
+  border-radius: 0 0 260px 260px;
+  background: linear-gradient(to top, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+}
+
+.pattern-left {
+  top: 0;
+  left: 22rem;
+}
+
+.pattern-right {
+  transform: rotate(180deg);
+  right: 22rem;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.02;
+}
+
+@media (width < 1750px) {
+  .pattern-left {
+    left: -17rem;
+  }
+  .pattern-right {
+    right: -22rem;
+  }
+}
+@media (width < 1000px) {
+  .pattern-left,
+  .pattern-right {
+    max-width: 32rem;
+    height: 55vh;
+  }
+  .pattern-left {
+    left: -22rem;
+  }
+  .pattern-right {
+    right: -22rem;
+  }
+}
+.phone {
+  width: 90rem;
+  min-height: 50.5rem;
+  border-radius: 2.8rem;
+  padding: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 20px 20px rgba(146, 145, 145, 0.267);
+  z-index: 99;
+}
+
+@media (width < 1000px) {
+  .phone {
+    width: 26rem;
+  }
+}
+.phone_screen {
+  width: 100%;
+  height: 48.7rem;
+  border-radius: 2.1rem;
+  background-color: hsl(270, 20%, 96%);
+  overflow: hidden;
+}
+
+.phone_header {
+  width: 100%;
+  height: 6.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+  border-radius: 2rem 2rem 0.5rem 0.5rem;
+}
+.phone_header .phone_header_top {
+  width: 13rem;
+  height: 1.8rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: hsl(0, 0%, 100%);
+}
+.phone_header .phone_header_bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-inline: 1.5rem;
+}
+.phone_header .phone_header_bottom .arrow_left {
+  width: 0.4rem;
+}
+.phone_header .phone_header_bottom .avatar_picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 100%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+}
+.phone_header .phone_header_bottom .avatar_picture img {
+  width: 90%;
+  border-radius: 50%;
+}
+.phone_header .phone_header_bottom .avatar_info {
+  margin-left: 0.8rem;
+  color: hsl(0, 0%, 100%);
+}
+.phone_header .phone_header_bottom .avatar_info span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.phone_header .phone_header_bottom .avatar_info p {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+.phone_header .phone_header_bottom .phone_options {
+  margin-left: auto;
+  width: 0.25rem;
+}
+
+.phone_display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 12px 6px 11px 10px;
+}
+.phone_display .gallery_img {
+  margin-left: auto;
+  margin-block: 14px 10px;
+  display: flex;
+  gap: 7px;
+}
+.phone_display .gallery_img figure {
+  width: 41px;
+}
+.phone_display .gallery_img figure img {
+  border-radius: 10px;
+}
+
+.phone_chat {
+  width: 125px;
+  font-size: 8px;
+  border-radius: 8px 8px 8px 3px;
+  padding: 7px 6px 8px 6px;
+  line-height: 10.5px;
+  font-weight: 400;
+  color: hsl(264, 100%, 61%);
+  background-color: hsla(276, 100%, 81%, 0.2);
+  animation: open-in 0.5s ease 0.1s;
+}
+.phone_chat:nth-child(2) {
+  animation-delay: 0.2s;
+  margin-top: 8px;
+}
+.phone_chat:nth-child(4), .phone_chat:nth-child(5) {
+  margin-left: auto;
+  border-radius: 8px 8px 3px 8px;
+  color: hsl(271, 15%, 43%);
+  background-color: hsl(0, 0%, 100%);
+}
+.phone_chat:nth-child(4) {
+  padding: 5px 5px 8px 5px;
+  animation-delay: 0.3s;
+}
+.phone_chat:nth-child(5) {
+  margin-top: 7px;
+  width: 80px;
+  animation-delay: 0.4s;
+}
+.phone_chat:nth-child(6) {
+  margin-top: 10px;
+  animation-delay: 0.6s;
+}
+
+.phone_price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px 8px 8px 3px;
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  width: 155px;
+  padding: 12px;
+  margin-top: 7px;
+}
+.phone_price .price_time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.phone_price input[type=checkbox] {
+  position: relative;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.phone_price input[type=checkbox]::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+.phone_price input[type=checkbox]:checked::before {
+  opacity: 1;
+}
+.phone_price input[type=checkbox]:checked {
+  border: 1px solid white;
+}
+.phone_price span {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.input_text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 7px 7px 15px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  margin-top: 10px;
+}
+.input_text p {
+  font-size: 7px;
+  opacity: 0.3;
+}
+.input_text a {
+  background-color: hsl(271, 36%, 24%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.input_text a img {
+  width: 6px;
+}
+
+.main_info h2 {
+  color: hsl(271, 36%, 24%);
+  font-size: clamp(3.3rem, 5cqw, 4rem);
+  font-weight: 500;
+}
+.main_info p {
+  color: hsl(270, 7%, 64%);
+  margin-top: 17px;
+  font-size: clamp(1.5rem, 5cqw, 1.6rem);
+  line-height: 3.1rem;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+@media (width < 1000px) {
+  .main_info {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

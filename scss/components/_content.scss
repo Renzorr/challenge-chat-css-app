@@ -1,0 +1,26 @@
+@use "../variables/variables" as v;
+
+.main_info {
+  h2 {
+    color: v.$very-dark-desaturated-violet;
+    font-size: clamp(3.3rem, 5cqw, 4rem);
+    font-weight: 500;
+  }
+
+  p {
+    color: v.$dark-grayish-violet;
+    margin-top: 17px;
+    font-size: clamp(1.5rem, 5cqw, 1.6rem);
+    line-height: 3.1rem;
+  }
+}
+
+.mask {
+  overflow: hidden;
+}
+
+@media (width < 1000px) {
+  .main_info {
+    text-align: center;
+  }
+}

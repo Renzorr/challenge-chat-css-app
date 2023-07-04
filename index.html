@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Chat app CSS illustration</title>
+  </head>
+  <body>
+    <h1 class="sr-only">Chat app CSS illustration</h1>
+
+    <div class="wrapper">
+      <div class="pattern-left"></div>
+      <div class="loader"></div>
+
+      <main>
+        <div class="phone">
+          <div class="phone_screen">
+            <section class="phone_header">
+              <div class="phone_header_top"></div>
+              <div class="phone_header_bottom">
+                <a href="#">
+                  <img
+                    src="./images/icon-arrow-left.png"
+                    alt="back"
+                    class="arrow_left"
+                  />
+                </a>
+                <figure class="avatar_picture">
+                  <img src="./images/avatar.jpg" alt="avatar picture" />
+                </figure>
+                <article class="avatar_info">
+                  <span>Samuel Green</span>
+                  <p>Available to Walk</p>
+                </article>
+                <a href="#" class="phone_options">
+                  <img src="./images/icon-dots.png" alt="options" />
+                </a>
+              </div>
+            </section>
+            <section class="phone_display">
+              <div class="phone_chat item">
+                That sounds great. I’d be happy with that.
+              </div>
+              <div class="phone_chat item">
+                Could you send over some pictures of your dog, please?
+              </div>
+              <div class="gallery_img">
+                <figure class="item">
+                  <img src="./images/dog-image-1.jpg" alt="dog picture" aria />
+                </figure>
+                <figure class="item">
+                  <img src="./images/dog-image-2.jpg" alt="dog picture" aria />
+                </figure>
+                <figure class="item">
+                  <img src="./images/dog-image-3.jpg" alt="dog picture" aria />
+                </figure>
+              </div>
+              <div class="phone_chat item">
+                Here are a few pictures. She’s a happy girl!
+              </div>
+              <div class="phone_chat item">Can you make it?</div>
+              <div class="phone_chat item">
+                She looks so happy! The time we discussed works. How long shall
+                I take her out for?
+              </div>
+              <div class="phone_price item">
+                <div class="price_time">
+                  <input type="checkbox" />
+                  <p>30 minute walk</p>
+                </div>
+                <span>$29</span>
+              </div>
+              <div class="phone_price item">
+                <div class="price_time">
+                  <input type="checkbox" />
+                  <p>1 hour walk</p>
+                </div>
+                <span>$49</span>
+              </div>
+              <div class="input_text item">
+                <p>Type a message…</p>
+                <a href="#">
+                  <img src="./images/icon-arrow-right.png" alt="send" />
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="main_info">
+          <div class="mask">
+            <h2 class="hide">Simple booking</h2>
+          </div>
+          <div class="mask">
+            <p class="hide">
+              Stay in touch with our dog walkers through the chat interface.
+              This makes it easy to discuss arrangements and make bookings. Once
+              the walk has been completed you can rate your walker and book
+              again all through the chat.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <div class="pattern-right"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+      const tl = gsap.timeline({ease: Power3.easeInOut,});
+
+      tl.to(".loader", {
+        height: 0,
+        top: "100%",
+        duration: 1.1,
+        delay: 0.7,
+      });
+
+      tl.from(".phone", {
+        y: -200,
+        opacity: 0,
+      });
+
+      tl.from(".hide", {
+        y: -200,
+        stagger: 0.2,
+      });
+
+      tl.from(".item", {
+        scale: 0,
+        opacity: 0,
+        stagger: 0.1,
+      });
+    </script>
+  </body>
+</html>
