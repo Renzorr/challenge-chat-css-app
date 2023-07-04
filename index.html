@@ -9,9 +9,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <!-- CSS -->
     <link rel="stylesheet" href="./css/index.css" />
-    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +19,7 @@
     <title>Frontend Mentor | Chat app CSS illustration</title>
   </head>
   <body>
-    <h1 class="sr-only">Chat app CSS illustration</h1>
+    <h1 aria-label="Chat app CSS illustration"></h1>
 
     <div class="wrapper">
       <div class="pattern-left"></div>
@@ -30,78 +28,91 @@
       <main>
         <div class="phone">
           <div class="phone_screen">
-            <section class="phone_header">
+            <header class="phone_header">
               <div class="phone_header_top"></div>
               <div class="phone_header_bottom">
-                <a href="#">
+                <button aria-label="return button">
                   <img
                     src="./images/icon-arrow-left.png"
-                    alt="back"
+                    alt=""
+                    aria-hidden="true"
                     class="arrow_left"
                   />
-                </a>
-                <figure class="avatar_picture">
+                </button>
+                <div class="avatar_picture">
                   <img src="./images/avatar.jpg" alt="avatar picture" />
-                </figure>
+                </div>
                 <article class="avatar_info">
                   <span>Samuel Green</span>
                   <p>Available to Walk</p>
                 </article>
-                <a href="#" class="phone_options">
-                  <img src="./images/icon-dots.png" alt="options" />
-                </a>
+                <button class="phone_options" aria-label="options button">
+                  <img src="./images/icon-dots.png" alt="" aria-hidden="true" />
+                </button>
               </div>
-            </section>
+            </header>
+
             <section class="phone_display">
-              <div class="phone_chat item">
+              <span class="phone_chat item">
                 That sounds great. I’d be happy with that.
-              </div>
-              <div class="phone_chat item">
+              </span>
+              <span class="phone_chat item">
                 Could you send over some pictures of your dog, please?
-              </div>
+              </span>
               <div class="gallery_img">
-                <figure class="item">
-                  <img src="./images/dog-image-1.jpg" alt="dog picture" aria />
-                </figure>
-                <figure class="item">
-                  <img src="./images/dog-image-2.jpg" alt="dog picture" aria />
-                </figure>
-                <figure class="item">
-                  <img src="./images/dog-image-3.jpg" alt="dog picture" aria />
-                </figure>
+                <img
+                  src="./images/dog-image-1.jpg"
+                  alt="dog picture"
+                  class="item"
+                />
+                <img
+                  src="./images/dog-image-2.jpg"
+                  alt="dog picture"
+                  class="item"
+                />
+                <img
+                  src="./images/dog-image-3.jpg"
+                  alt="dog picture"
+                  class="item"
+                />
               </div>
-              <div class="phone_chat item">
+              <span class="phone_chat item">
                 Here are a few pictures. She’s a happy girl!
-              </div>
-              <div class="phone_chat item">Can you make it?</div>
-              <div class="phone_chat item">
+              </span>
+              <span class="phone_chat item">Can you make it?</span>
+              <span class="phone_chat item">
                 She looks so happy! The time we discussed works. How long shall
                 I take her out for?
-              </div>
+              </span>
               <div class="phone_price item">
                 <div class="price_time">
-                  <input type="checkbox" />
-                  <p>30 minute walk</p>
+                  <input type="checkbox" id="checkbox-1" />
+                  <label for="checkbox-1">30 minute walk</label>
                 </div>
                 <span>$29</span>
               </div>
               <div class="phone_price item">
                 <div class="price_time">
-                  <input type="checkbox" />
-                  <p>1 hour walk</p>
+                  <input type="checkbox" id="checkbox-2" />
+                  <label for="checkbox-2">1 hour walk</label>
                 </div>
                 <span>$49</span>
               </div>
-              <div class="input_text item">
+              <div class="phone_text item">
                 <p>Type a message…</p>
-                <a href="#">
-                  <img src="./images/icon-arrow-right.png" alt="send" />
-                </a>
+                <button aria-label="send button">
+                  <img
+                    src="./images/icon-arrow-right.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
             </section>
           </div>
         </div>
-        <div class="main_info">
+
+        <section class="main_info">
           <div class="mask">
             <h2 class="hide">Simple booking</h2>
           </div>
@@ -113,26 +124,30 @@
               again all through the chat.
             </p>
           </div>
-        </div>
+        </section>
       </main>
 
       <div class="pattern-right"></div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
     <script>
-      const tl = gsap.timeline({ease: Power3.easeInOut,});
+      const tl = gsap.timeline();
 
       tl.to(".loader", {
         height: 0,
         top: "100%",
         duration: 1.1,
-        delay: 0.7,
+        delay: 0.8,
+        ease: Power2.easeInOut,
       });
 
       tl.from(".phone", {
         y: -200,
+        opacity: 0,
+      });
+
+      tl.from(".phone_header", {
+        y: -50,
         opacity: 0,
       });
 
